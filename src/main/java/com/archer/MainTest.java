@@ -9,8 +9,6 @@ public class MainTest {
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(MainConfig.class);
         Person bean = applicationContext.getBean(Person.class);
-
-
         System.out.println(bean);
     }
 }
