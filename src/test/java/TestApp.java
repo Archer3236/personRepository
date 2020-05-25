@@ -16,7 +16,7 @@ public class TestApp {
         Node blue_banana = new Node(6, 2, "blue_banana");
         Node blue_banana_bad = new Node(7, 5, "blue_banana_bad");
         List<Node> nodes = Arrays.asList(apple, banana, red_apple, blue_apple, red_banana, blue_banana, blue_banana_bad);
-        Map<Integer, List<Node>> map = nodes.stream().filter(node -> node.getpId() != 0).collect(Collectors.groupingBy(node -> node.getpId()));
+        Map<Integer, List<Node>> map = nodes.stream().filter(node -> node.getpId()!=0).collect(Collectors.groupingBy(Node::getpId));
         nodes.forEach(node -> node.setSub(map.get(node.getId())));
         List<Node> collect = nodes.stream().filter(node -> node.getpId() == 0).collect(Collectors.toList());
         String jsonString = JSON.toJSONString(collect);
